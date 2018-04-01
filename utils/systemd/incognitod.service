@@ -1,0 +1,21 @@
+[Unit]
+Description=Incognito Full Node
+After=network.target
+
+[Service]
+User=incognito
+Group=incognito
+WorkingDirectory=~
+RuntimeDirectory=incognito
+
+Type=forking
+PIDFile=/run/incognito/incognitod.pid
+
+ExecStart=/usr/bin/incognitod --config-file /etc/incognitod.conf \
+    --detach --pidfile /run/incognito/incognitod.pid
+
+Restart=always
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
