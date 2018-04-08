@@ -5,9 +5,9 @@ Portions Copyright (c) 2012-2013 The Cryptonote developers.
 
 ## Development resources
 
-- Web: [getincognito.org](https://getincognito.org)
-- Forum: [forum.getincognito.org](https://forum.getincognito.org)
-- Mail: [dev@getincognito.org](mailto:dev@getincognito.org)
+- Web: [incognitocurrency.com](https://www.incognitocurrency.com)
+- Forum: [forum.incognitocurrency.com](https://forum.incognitocurrency.com)
+- Mail: [dev@incognitocurrency.com](mailto:dev@incognitocurrency.com)
 - GitHub: [https://github.com/incognito-currency/incognito](https://github.com/incognito-currency/incognito)
 - IRC: [#incognito on Freenode](http://webchat.freenode.net/?randomnick=1&channels=%23incognito&prompt=1&uio=d4)
 
@@ -20,17 +20,17 @@ Portions Copyright (c) 2012-2013 The Cryptonote developers.
 
 | Operating System      | Processor | Status |
 | --------------------- | -------- |--------|
-| Ubuntu 16.04          |  i686    | [![Ubuntu 16.04 i686](https://build.getincognito.org/png?builder=incognito-static-ubuntu-i686)](https://build.getincognito.org/builders/incognito-static-ubuntu-i686)
-| Ubuntu 16.04          |  amd64   | [![Ubuntu 16.04 amd64](https://build.getincognito.org/png?builder=incognito-static-ubuntu-amd64)](https://build.getincognito.org/builders/incognito-static-ubuntu-amd64)
-| Ubuntu 16.04          |  armv7   | [![Ubuntu 16.04 armv7](https://build.getincognito.org/png?builder=incognito-static-ubuntu-arm7)](https://build.getincognito.org/builders/incognito-static-ubuntu-arm7)
-| Debian Stable         |  armv8   | [![Debian armv8](https://build.getincognito.org/png?builder=incognito-static-debian-armv8)](https://build.getincognito.org/builders/incognito-static-debian-armv8)
-| OSX 10.10             |  amd64   | [![OSX 10.10 amd64](https://build.getincognito.org/png?builder=incognito-static-osx-10.10)](https://build.getincognito.org/builders/incognito-static-osx-10.10)
-| OSX 10.11             |  amd64   | [![OSX 10.11 amd64](https://build.getincognito.org/png?builder=incognito-static-osx-10.11)](https://build.getincognito.org/builders/incognito-static-osx-10.11)
-| OSX 10.12             |  amd64   | [![OSX 10.12 amd64](https://build.getincognito.org/png?builder=incognito-static-osx-10.12)](https://build.getincognito.org/builders/incognito-static-osx-10.12)
-| FreeBSD 11            |  amd64   | [![FreeBSD 11 amd64](https://build.getincognito.org/png?builder=incognito-static-freebsd64)](https://build.getincognito.org/builders/incognito-static-freebsd64)
-| DragonFly BSD 4.6     |  amd64   | [![DragonFly BSD amd64](https://build.getincognito.org/png?builder=incognito-static-dragonflybsd-amd64)](https://build.getincognito.org/builders/incognito-static-dragonflybsd-amd64)
-| Windows (MSYS2/MinGW) |  i686    | [![Windows (MSYS2/MinGW) i686](https://build.getincognito.org/png?builder=incognito-static-win32)](https://build.getincognito.org/builders/incognito-static-win32)
-| Windows (MSYS2/MinGW) |  amd64   | [![Windows (MSYS2/MinGW) amd64](https://build.getincognito.org/png?builder=incognito-static-win64)](https://build.getincognito.org/builders/incognito-static-win64)
+| Ubuntu 16.04          |  i686    | [![Ubuntu 16.04 i686](https://build.incognitocurrency.com/png?builder=incognito-static-ubuntu-i686)](https://build.incognitocurrency.com/builders/incognito-static-ubuntu-i686)
+| Ubuntu 16.04          |  amd64   | [![Ubuntu 16.04 amd64](https://build.incognitocurrency.com/png?builder=incognito-static-ubuntu-amd64)](https://build.incognitocurrency.com/builders/incognito-static-ubuntu-amd64)
+| Ubuntu 16.04          |  armv7   | [![Ubuntu 16.04 armv7](https://build.incognitocurrency.com/png?builder=incognito-static-ubuntu-arm7)](https://build.incognitocurrency.com/builders/incognito-static-ubuntu-arm7)
+| Debian Stable         |  armv8   | [![Debian armv8](https://build.incognitocurrency.com/png?builder=incognito-static-debian-armv8)](https://build.incognitocurrency.com/builders/incognito-static-debian-armv8)
+| OSX 10.10             |  amd64   | [![OSX 10.10 amd64](https://build.incognitocurrency.com/png?builder=incognito-static-osx-10.10)](https://build.incognitocurrency.com/builders/incognito-static-osx-10.10)
+| OSX 10.11             |  amd64   | [![OSX 10.11 amd64](https://build.incognitocurrency.com/png?builder=incognito-static-osx-10.11)](https://build.incognitocurrency.com/builders/incognito-static-osx-10.11)
+| OSX 10.12             |  amd64   | [![OSX 10.12 amd64](https://build.incognitocurrency.com/png?builder=incognito-static-osx-10.12)](https://build.incognitocurrency.com/builders/incognito-static-osx-10.12)
+| FreeBSD 11            |  amd64   | [![FreeBSD 11 amd64](https://build.incognitocurrency.com/png?builder=incognito-static-freebsd64)](https://build.incognitocurrency.com/builders/incognito-static-freebsd64)
+| DragonFly BSD 4.6     |  amd64   | [![DragonFly BSD amd64](https://build.incognitocurrency.com/png?builder=incognito-static-dragonflybsd-amd64)](https://build.incognitocurrency.com/builders/incognito-static-dragonflybsd-amd64)
+| Windows (MSYS2/MinGW) |  i686    | [![Windows (MSYS2/MinGW) i686](https://build.incognitocurrency.com/png?builder=incognito-static-win32)](https://build.incognitocurrency.com/builders/incognito-static-win32)
+| Windows (MSYS2/MinGW) |  amd64   | [![Windows (MSYS2/MinGW) amd64](https://build.incognitocurrency.com/png?builder=incognito-static-win64)](https://build.incognitocurrency.com/builders/incognito-static-win64)
 
 ## Coverage
 
@@ -60,7 +60,7 @@ As with many development projects, the repository on Github is considered to be 
 
 ## Supporting the project
 
-Incognito is a 100% community-sponsored endeavor. If you want to join our efforts, the easiest thing you can do is support the project financially. Both Incognito and Bitcoin donations can be made to **donate.getincognito.org** if using a client that supports the [OpenAlias](https://openalias.org) standard. Alternatively you can send XMR to the Incognito donation address via the `donate` command (type `help` in the command-line wallet for details).
+Incognito is a 100% community-sponsored endeavor. If you want to join our efforts, the easiest thing you can do is support the project financially. Both Incognito and Bitcoin donations can be made to **donate.incognitocurrency.com** if using a client that supports the [OpenAlias](https://openalias.org) standard. Alternatively you can send XMR to the Incognito donation address via the `donate` command (type `help` in the command-line wallet for details).
 
 The Incognito donation address is: `44AFFq5kSiGBoZ4NMDwYtN18obc8AemS33DBLWs3H7otXft3XjrpDtQGv7SqSsaBYBb98uNbr2VBBEt7f2wfn3RVGQBEP3A` (viewkey: `f359631075708155cc3d92a32b75a7d02a5dcf27756707b47a2b31b21c389501`)
 
@@ -68,13 +68,13 @@ The Bitcoin donation address is: `1KTexdemPdxSBcG55heUuTjDRYqbC5ZL8H`
 
 Core development funding and/or some supporting services are also graciously provided by sponsors:
 
-[<img width="80" src="https://static.getincognito.org/images/sponsors/myincognito.png"/>](https://myincognito.com)
-[<img width="150" src="https://static.getincognito.org/images/sponsors/kitware.png?1"/>](http://kitware.com)
-[<img width="100" src="https://static.getincognito.org/images/sponsors/dome9.png"/>](http://dome9.com)
-[<img width="150" src="https://static.getincognito.org/images/sponsors/araxis.png"/>](http://araxis.com)
-[<img width="150" src="https://static.getincognito.org/images/sponsors/jetbrains.png"/>](http://www.jetbrains.com/)
-[<img width="150" src="https://static.getincognito.org/images/sponsors/navicat.png"/>](http://www.navicat.com/)
-[<img width="150" src="https://static.getincognito.org/images/sponsors/symas.png"/>](http://www.symas.com/)
+[<img width="80" src="https://static.incognitocurrency.com/images/sponsors/myincognito.png"/>](https://myincognito.com)
+[<img width="150" src="https://static.incognitocurrency.com/images/sponsors/kitware.png?1"/>](http://kitware.com)
+[<img width="100" src="https://static.incognitocurrency.com/images/sponsors/dome9.png"/>](http://dome9.com)
+[<img width="150" src="https://static.incognitocurrency.com/images/sponsors/araxis.png"/>](http://araxis.com)
+[<img width="150" src="https://static.incognitocurrency.com/images/sponsors/jetbrains.png"/>](http://www.jetbrains.com/)
+[<img width="150" src="https://static.incognitocurrency.com/images/sponsors/navicat.png"/>](http://www.navicat.com/)
+[<img width="150" src="https://static.incognitocurrency.com/images/sponsors/symas.png"/>](http://www.symas.com/)
 
 There are also several mining pools that kindly donate a portion of their fees, [a list of them can be found on our Bitcointalk post](https://bitcointalk.org/index.php?topic=583449.0).
 
@@ -85,23 +85,6 @@ See [LICENSE](LICENSE).
 ## Contributing
 
 If you want to help out, see [CONTRIBUTING](CONTRIBUTING.md) for a set of guidelines.
-
-## Scheduled mandatory software upgrades
-
-Incognito uses a fixed-schedule mandatory software upgrade (hard fork) mechanism to implement new features. This means that users of Incognito (end users and service providers) need to run current versions and upgrade their software on a regular schedule. Mandatory software upgrades occur during the months of March and September. The required software for these upgrades will be available prior to the scheduled date. Please check the repository prior to this date for the proper Incognito software version. Below is the historical schedule and the projected schedule for the next upgrade.
-Dates are provided in the format YYYY-MM-DD. 
-
-
-| Software upgrade block height | Date       | Fork version | Minimum Incognito version | Recommended Incognito version | Details                                                                            |  
-| ------------------------------ | -----------| ----------------- | ---------------------- | -------------------------- | ---------------------------------------------------------------------------------- |
-| 1009827                        | 2016-03-22 | v2                | v0.9.4                 | v0.9.4                     | Allow only >= ringsize 3, blocktime = 120 seconds, fee-free blocksize 60 kb       |
-| 1141317                        | 2016-09-21 | v3                | v0.9.4                 | v0.10.0                    | Splits coinbase into denominations  |
-| 1220516                        | 2017-01-05 | v4                | v0.10.1                | v0.10.2.1                  | Allow normal and RingCT transactions |
-| 1288616                        | 2017-04-15 | v5                | v0.10.3.0              | v0.10.3.1                  | Adjusted minimum blocksize and fee algorithm      |
-| 1400000                        | 2017-09-16 | v6                | v0.11.0.0              | v0.11.0.0                  | Allow only RingCT transactions, allow only >= ringsize 5      |
-| XXXXXXX                        | 2018-03-XX | XX                | XXXXXXXXX              | XXXXXXXXX                  | XXXXXX
-
-X's indicate that these details have not been determined as of commit date, 2017-09-20. 
 
 ## Release staging schedule and protocol
 
