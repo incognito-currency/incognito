@@ -120,10 +120,10 @@ ge_comments = textwrap.dedent("""\
     */
     """)
 
-xmr_comments = textwrap.dedent("""\
+inc_comments = textwrap.dedent("""\
     /*
      *
-     * xmr specific code
+     * inc specific code
      *
      *
     This code is from the original CryptoNote.
@@ -171,7 +171,7 @@ if a == "m":
         os.system("cp "+g+" "+g.replace("fe", "fe.incognito."))
     qhasmToC("fe_pow22523.c", "pow22523.h", "fe.incognito._pow22523.c")
     qhasmToC("fe_invert.c", "pow225521.h", "fe.incognito._invert.c")
-    os.system("rm fe.incognito._isnonzero.c") #since it's modified, it's in xmrSpecificOld
+    os.system("rm fe.incognito._isnonzero.c") #since it's modified, it's in incSpecificOld
     os.system("cat fe.incognito.*.c | grep -v '^#include' > fe.incognito.c")
 
     #sc things
@@ -180,7 +180,7 @@ if a == "m":
     #so you don't get multiple "loads"
     os.system("tail -n +24 sc_reduce.c > sc.incognito._reduce.c") #also good on linux
     os.system("tail -n +24 sc_muladd.c > sc.incognito._muladd.c")
-    os.system("tail -n +31 sc_sub.xmr.c > sc.incognito._sub.xmr.c") #careful with the tails if you change these files!
+    os.system("tail -n +31 sc_sub.inc.c > sc.incognito._sub.inc.c") #careful with the tails if you change these files!
     os.system("cat sc.incognito.*.c | grep -v '^#include' > sc.incognito.c")
 
     #ge stuff
@@ -223,9 +223,9 @@ if a == "m":
             text_file.write(ge_comments)
     with open("sc.incognito.comments", "w") as text_file:
             text_file.write(sc_comments)
-    with open("xmr.incognito.comments", "w") as text_file:
-            text_file.write(xmr_comments)
-    with open("xmr.incognito.predeclarations", "w") as text_file:
+    with open("inc.incognito.comments", "w") as text_file:
+            text_file.write(inc_comments)
+    with open("inc.incognito.predeclarations", "w") as text_file:
             text_file.write(predeclarations)
 
 
@@ -238,7 +238,7 @@ if a == "m":
         text_file.write(crypto_ops_includes)
 
     #note you may have duplicates of load_3, load_4 and possibly some other functions ... 
-    os.system("cat incognito.license crypto-ops.incognito.includes xmr.incognito.predeclarations fe.incognito.comments fe.incognito.c sc.incognito.comments sc.incognito.c ge.incognito.comments ge.incognito.c xmr.incognito.comments xmrSpecificOld.c > crypto-ops.c")
+    os.system("cat incognito.license crypto-ops.incognito.includes inc.incognito.predeclarations fe.incognito.comments fe.incognito.c sc.incognito.comments sc.incognito.c ge.incognito.comments ge.incognito.c inc.incognito.comments incSpecificOld.c > crypto-ops.c")
 
     #incognito specific header files
     #print("making crypto-ops-tmp.h")

@@ -60,7 +60,7 @@ As with many development projects, the repository on Github is considered to be 
 
 ## Supporting the project
 
-Incognito is a 100% community-sponsored endeavor. If you want to join our efforts, the easiest thing you can do is support the project financially. Both Incognito and Bitcoin donations can be made to **donate.incognitocurrency.com** if using a client that supports the [OpenAlias](https://openalias.org) standard. Alternatively you can send XMR to the Incognito donation address via the `donate` command (type `help` in the command-line wallet for details).
+Incognito is a 100% community-sponsored endeavor. If you want to join our efforts, the easiest thing you can do is support the project financially. Both Incognito and Bitcoin donations can be made to **donate.incognitocurrency.com** if using a client that supports the [OpenAlias](https://openalias.org) standard. Alternatively you can send INC to the Incognito donation address via the `donate` command (type `help` in the command-line wallet for details).
 
 The Incognito donation address is: `44AFFq5kSiGBoZ4NMDwYtN18obc8AemS33DBLWs3H7otXft3XjrpDtQGv7SqSsaBYBb98uNbr2VBBEt7f2wfn3RVGQBEP3A` (viewkey: `f359631075708155cc3d92a32b75a7d02a5dcf27756707b47a2b31b21c389501`)
 
