@@ -7198,7 +7198,11 @@ bool wallet2::use_fork_rules(uint8_t version, int64_t early_blocks)
   result = m_node_rpc_proxy.get_earliest_height(version, earliest_height);
   throw_on_rpc_response_error(result, "get_hard_fork_info");
 
-  bool close_enough = height >=  earliest_height - early_blocks; // start using the rules that many blocks beforehand
+  // bool close_enough = height >=  earliest_height - early_blocks; // start using the rules that many blocks beforehand
+  bool close_enough = earliest_height >= static_cast<uint64_t>(std::abs(early_blocks)) ?
+    (height >= earliest_height - early_blocks) : true;
+
+  LOG_PRINT_L2("HOOK: earliest height is " << earliest_height << "." << close_enough);
   if (close_enough)
     LOG_PRINT_L2("Using v" << (unsigned)version << " rules");
   else
