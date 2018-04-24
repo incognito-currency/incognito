@@ -382,24 +382,13 @@ std::set<std::string> node_server<t_payload_net_handler>::get_seed_nodes(bool te
     full_addrs.insert("45.76.186.87:39001");
     full_addrs.insert("209.250.235.176:39001");
     full_addrs.insert("45.76.124.129:39001");
+    full_addrs.insert("144.202.113.176:39001");
+    full_addrs.insert("104.238.131.179:39001");
     full_addrs.insert("159.89.197.24:39001");
-    full_addrs.insert("167.99.83.243:39001");
     full_addrs.insert("139.59.91.165:39001");
-    full_addrs.insert("138.197.130.2:39001");
     full_addrs.insert("159.65.69.234:39001");
     full_addrs.insert("165.227.136.143:39001");
     full_addrs.insert("159.89.82.223:39001");
-    full_addrs.insert("167.99.200.55:39001");
-    full_addrs.insert("159.89.172.138:39001");
-    full_addrs.insert("138.197.180.139:39001");
-    //full_addrs.insert("107.152.130.98:39001");
-    //full_addrs.insert("212.83.175.67:39001");
-    //full_addrs.insert("5.9.100.248:39001");
-    //full_addrs.insert("163.172.182.165:39001");
-    //full_addrs.insert("161.67.132.39:39001");
-    //full_addrs.insert("198.74.231.92:39001");
-    //full_addrs.insert("195.154.123.123:28080");
-    //full_addrs.insert("212.83.172.165:28080");
   }
   return full_addrs;
 }
