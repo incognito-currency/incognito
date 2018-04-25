@@ -8015,17 +8015,17 @@ uint64_t wallet2::get_daemon_blockchain_target_height(string &err)
 
 uint64_t wallet2::get_approximate_blockchain_height() const
 {
-  // time of v2 fork
-  const time_t fork_time = m_testnet ? 1448285909 : 1458748658;
+  // time of begining: testnet: 2018-01-12, mainnet: 2018-01-18;
+  const time_t fork_time = m_testnet ? 1515715200 : 1516233600;
+  // in case we not launched mainnet yet
+  if (fork_time > time(nullptr))
+    return 0;
   // v2 fork block
-  const uint64_t fork_block = m_testnet ? 624634 : 1009827;
+  const uint64_t fork_block = m_testnet ? 1 : 1;
   // avg seconds per block
   const int seconds_per_block = DIFFICULTY_TARGET_V2;
   // Calculated blockchain height
   uint64_t approx_blockchain_height = fork_block + (time(NULL) - fork_time)/seconds_per_block;
-  // testnet got some huge rollbacks, so the estimation is way off
-  if (m_testnet && approx_blockchain_height > 105000)
-    approx_blockchain_height -= 105000;
   LOG_PRINT_L2("Calculated blockchain height: " << approx_blockchain_height);
   return approx_blockchain_height;
 }
