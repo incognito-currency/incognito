@@ -2,7 +2,7 @@
 /// @author rfree (current maintainer/user in incognito.cc project - most of code is from CryptoNote)
 /// @brief This is the orginal cryptonote protocol network-events handler, modified by us
 
-// Copyright (c) 2014-2017, The Incognito Project
+// Copyright (c) 2017-2018, The Incognito Project
 //
 // All rights reserved.
 //

@@ -1,6 +1,6 @@
 # Incognito Blockchain Utilities
 
-Copyright (c) 2014-2017, The Incognito Project
+Copyright (c) 2017-2018, The Incognito Project
 
 ## Introduction
 
