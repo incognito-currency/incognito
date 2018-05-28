@@ -81,7 +81,7 @@ DISABLE_VS_WARNINGS(4267)
 #define MERROR_VER(x) MCERROR("verify", x)
 
 // used to overestimate the block reward when estimating a per kB to use
-#define BLOCK_REWARD_OVERESTIMATE (10 * 1000000000000)
+#define BLOCK_REWARD_OVERESTIMATE (10 * 10000000)
 
 static const struct {
   uint8_t version;
@@ -110,6 +110,7 @@ static const struct {
   // by hms - must be modified before start
   // INCOGNITO: start hardfork v7 from 1st block
   { 7, 1, 0, 1517045120 },
+  { 8, 69900, 0, 1527674400 },
 };
 // static const uint64_t mainnet_hard_fork_version_1_till = 1009826;
 static const uint64_t mainnet_hard_fork_version_1_till = 1;
