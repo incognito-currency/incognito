@@ -729,12 +729,14 @@ namespace cryptonote
       decimal_point = default_decimal_point;
     switch (std::atomic_load(&default_decimal_point))
     {
-      case 7:
+      case 10:
         return "incognito";
-      case 4:
+      case 7:
         return "millinc";
-      case 1:
+      case 4:
         return "microinc";
+      case 1:
+        return "nanoinc";
       case 0:
         return "i";
       default:
