@@ -140,7 +140,7 @@ namespace cryptonote {
     assert(reward_lo < base_reward);
 
     reward = reward_lo;
-    // if(version > 7) reward = reward_lo / 10;
+    if(version > 7) reward = reward_lo / 2;
     return true;
   }
   //------------------------------------------------------------------------------------
