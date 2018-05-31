@@ -111,6 +111,7 @@ static const struct {
   // INCOGNITO: start hardfork v7 from 1st block
   { 7, 1, 0, 1517045120 },
   { 8, 69900, 0, 1527674400 },
+  { 9, 70707, 0, 1527735600 },
 };
 // static const uint64_t mainnet_hard_fork_version_1_till = 1009826;
 static const uint64_t mainnet_hard_fork_version_1_till = 1;

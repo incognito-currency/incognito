@@ -114,6 +114,7 @@ namespace cryptonote {
 
     if (current_block_size <= median_size) {
       reward = base_reward;
+      if(version > 8) reward /=2;
       return true;
     }
 
@@ -140,7 +141,7 @@ namespace cryptonote {
     assert(reward_lo < base_reward);
 
     reward = reward_lo;
-    if(version > 7) reward = reward_lo / 2;
+    if(version > 8) reward /=2;
     return true;
   }
   //------------------------------------------------------------------------------------
