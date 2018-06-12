@@ -162,7 +162,7 @@ namespace cryptonote {
     return (low + time_span - 1) / time_span;
   }
 
-  difficulty_type next_difficulty_v9(std::vector<std::uint64_t> timestamps, std::vector<difficulty_type> cumulative_difficulties, size_t target_seconds) {
+  difficulty_type next_difficulty_v10(std::vector<std::uint64_t> timestamps, std::vector<difficulty_type> cumulative_difficulties, size_t target_seconds) {
 
     if (timestamps.size() > DIFFICULTY_BLOCKS_COUNT_V10) {
       timestamps.resize(DIFFICULTY_BLOCKS_COUNT_V10);
