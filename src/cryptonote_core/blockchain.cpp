@@ -112,7 +112,7 @@ static const struct {
   { 7, 1, 0, 1517045120 },
   { 8, 69900, 0, 1527674400 },
   { 9, 70707, 0, 1527735600 },
-  { 10, 102000, 0, 1528934400 },
+  { 10, 106000, 0, 1528934400 },
 };
 // static const uint64_t mainnet_hard_fork_version_1_till = 1009826;
 static const uint64_t mainnet_hard_fork_version_1_till = 1;
@@ -138,6 +138,9 @@ static const struct {
   { 7, 1057028, 0, 1512211236 },
   */
   { 7, 1, 0, 1501709789 },
+  { 8, 69900, 0, 1527674400 },
+  { 9, 70707, 0, 1527735600 },
+  { 10, 106000, 0, 1528934400 },
 };
 
 static const uint64_t testnet_hard_fork_version_1_till = 1;

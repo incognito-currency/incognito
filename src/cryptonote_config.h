@@ -49,7 +49,7 @@
 #define CRYPTONOTE_DEFAULT_TX_SPENDABLE_AGE             10
 
 #define BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW               60
-#define BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW_V10            11
+#define BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW_V10           11
 
 // MONEY_SUPPLY - total number coins to be generated
 #define MONEY_SUPPLY                                    ((uint64_t)8888888888880000000) // 888,888,888,888 COIN
