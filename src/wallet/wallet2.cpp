@@ -1108,11 +1108,11 @@ void wallet2::process_new_transaction(const crypto::hash &txid, const cryptonote
         // MWARNING("Failed to generate key derivation from tx pubkey, skipping");
         // additional_derivations.pop_back();
         additional_derivations.push_back({});
-	      if (!hwdev.generate_key_derivation(additional_tx_pub_keys[i], keys.m_view_secret_key, additional_derivations.back()))
-	      {
-	        MWARNING("Failed to generate key derivation from tx pubkey, skipping");
-	        additional_derivations.pop_back();
-	      }
+	if (!generate_key_derivation(additional_tx_pub_keys[i], keys.m_view_secret_key, additional_derivations.back()))
+	{
+	    MWARNING("Failed to generate key derivation from tx pubkey, skipping");
+	    additional_derivations.pop_back();
+	}
       }
     }
 
@@ -7218,7 +7218,6 @@ bool wallet2::use_fork_rules(uint8_t version, int64_t early_blocks)
   bool close_enough = earliest_height >= static_cast<uint64_t>(std::abs(early_blocks)) ?
     (height >= earliest_height - early_blocks) : true;
 
-  LOG_PRINT_L2("HOOK: earliest height is " << earliest_height << "." << close_enough);
   if (close_enough)
     LOG_PRINT_L2("Using v" << (unsigned)version << " rules");
   else
