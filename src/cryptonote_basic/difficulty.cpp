@@ -33,6 +33,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <vector>
+#include <cmath>
 
 #include "common/int-util.h"
 #include "crypto/hash.h"
