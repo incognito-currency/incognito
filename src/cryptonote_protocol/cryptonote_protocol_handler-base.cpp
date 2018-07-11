@@ -2,7 +2,7 @@
 /// @author rfree (current maintainer in incognito.cc project)
 /// @brief This is the place to implement our handlers for protocol network actions, e.g. for ratelimit for download-requests
 
-// Copyright (c) 2017-2018, The Incognito Project
+// Copyright (c) 2017-2018, The Monero Project
 // 
 // All rights reserved.
 // 

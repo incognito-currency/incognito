@@ -1,4 +1,4 @@
-# Copyright (c) 2016, The Incognito Project
+# Copyright (c) 2016, The Monero Project
 #
 # All rights reserved.
 #

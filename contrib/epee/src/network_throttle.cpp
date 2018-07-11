@@ -26,7 +26,7 @@ Throttling work by:
 
 */
 
-// Copyright (c) 2017-2018, The Incognito Project
+// Copyright (c) 2017-2018, The Monero Project
 // 
 // All rights reserved.
 // 

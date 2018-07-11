@@ -2,7 +2,7 @@
 /// @author rfree (current maintainer in incognito.cc project)
 /// @brief base for connection, contains e.g. the ratelimit hooks
 
-// Copyright (c) 2017-2018, The Incognito Project
+// Copyright (c) 2017-2018, The Monero Project
 // 
 // All rights reserved.
 // 
