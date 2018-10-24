@@ -1067,6 +1067,7 @@ void wallet2::process_new_transaction(const crypto::hash &txid, const cryptonote
     LOG_PRINT_L0("Transaction extra has unsupported format: " << txid);
   }
   std::deque<bool> output_found(tx.vout.size(), false);
+  uint64_t total_received_1 = 0;
   // Don't try to extract tx public key if tx has no ouputs
   size_t pk_index = 0;
   std::vector<tx_scan_info_t> tx_scan_info(tx.vout.size());
@@ -1212,6 +1213,7 @@ void wallet2::process_new_transaction(const crypto::hash &txid, const cryptonote
             + ", m_transfers.size() is " + boost::lexical_cast<std::string>(m_transfers.size()));
         if (kit == m_pub_keys.end())
         {
+           uint64_t amount = tx.vout[o].amount ? tx.vout[o].amount : tx_scan_info[o].amount;
           if (!pool)
           {
 	    m_transfers.push_back(boost::value_initialized<transfer_details>());
@@ -1228,10 +1230,11 @@ void wallet2::process_new_transaction(const crypto::hash &txid, const cryptonote
             td.m_pk_index = pk_index - 1;
             td.m_subaddr_index = tx_scan_info[o].received->index;
             expand_subaddresses(tx_scan_info[o].received->index);
-            if (td.m_amount == 0)
+            
+            if (tx.vout[o].amount == 0)
             {
               td.m_mask = tx_scan_info[o].mask;
-              td.m_amount = tx_scan_info[o].amount;
+              // td.m_amount = tx_scan_info[o].amount;
               td.m_rct = true;
             }
             else if (miner_tx && tx.version == 2)
@@ -1259,6 +1262,7 @@ void wallet2::process_new_transaction(const crypto::hash &txid, const cryptonote
 	    if (0 != m_callback)
 	      m_callback->on_money_received(height, txid, tx, td.m_amount, td.m_subaddr_index);
           }
+          total_received_1 += amount;
         }
 	else if (m_transfers[kit->second].m_spent || m_transfers[kit->second].amount() >= tx.vout[o].amount)
         {
@@ -1266,6 +1270,9 @@ void wallet2::process_new_transaction(const crypto::hash &txid, const cryptonote
               << " from received " << print_money(tx.vout[o].amount) << " output already exists with "
               << (m_transfers[kit->second].m_spent ? "spent" : "unspent") << " "
               << print_money(m_transfers[kit->second].amount()) << ", received output ignored");
+    THROW_WALLET_EXCEPTION_IF(tx_money_got_in_outs[tx_scan_info[o].received->index] < tx_scan_info[o].amount,
+              error::wallet_internal_error, "Unexpected values of new and old outputs");
+          tx_money_got_in_outs[tx_scan_info[o].received->index] -= tx_scan_info[o].amount;
         }
         else
         {
@@ -1273,7 +1280,14 @@ void wallet2::process_new_transaction(const crypto::hash &txid, const cryptonote
               << " from received " << print_money(tx.vout[o].amount) << " output already exists with "
               << print_money(m_transfers[kit->second].amount()) << ", replacing with new output");
           // The new larger output replaced a previous smaller one
-          tx_money_got_in_outs[tx_scan_info[o].received->index] -= tx.vout[o].amount;
+          // tx_money_got_in_outs[tx_scan_info[o].received->index] -= tx.vout[o].amount;
+          THROW_WALLET_EXCEPTION_IF(tx_money_got_in_outs[tx_scan_info[o].received->index] < tx_scan_info[o].amount,
+              error::wallet_internal_error, "Unexpected values of new and old outputs");
+          THROW_WALLET_EXCEPTION_IF(m_transfers[kit->second].amount() > tx_scan_info[o].amount,
+              error::wallet_internal_error, "Unexpected values of new and old outputs");
+          tx_money_got_in_outs[tx_scan_info[o].received->index] -= m_transfers[kit->second].amount();
+           uint64_t amount = tx.vout[o].amount ? tx.vout[o].amount : tx_scan_info[o].amount;
+          uint64_t extra_amount = amount - m_transfers[kit->second].amount();
 
           if (!pool)
           {
@@ -1287,10 +1301,9 @@ void wallet2::process_new_transaction(const crypto::hash &txid, const cryptonote
             td.m_pk_index = pk_index - 1;
             td.m_subaddr_index = tx_scan_info[o].received->index;
             expand_subaddresses(tx_scan_info[o].received->index);
-            if (td.m_amount == 0)
+            if (tx.vout[o].amount == 0)
             {
               td.m_mask = tx_scan_info[o].mask;
-              td.m_amount = tx_scan_info[o].amount;
               td.m_rct = true;
             }
             else if (miner_tx && tx.version == 2)
@@ -1317,6 +1330,7 @@ void wallet2::process_new_transaction(const crypto::hash &txid, const cryptonote
 	    if (0 != m_callback)
 	      m_callback->on_money_received(height, txid, tx, td.m_amount, td.m_subaddr_index);
           }
+          total_received_1 += extra_amount;
         }
       }
     }
@@ -1427,6 +1441,20 @@ void wallet2::process_new_transaction(const crypto::hash &txid, const cryptonote
     else if (get_payment_id_from_tx_extra_nonce(extra_nonce.nonce, payment_id))
     {
       LOG_PRINT_L2("Found unencrypted payment ID: " << payment_id);
+    }
+
+    uint64_t total_received_2 = 0;
+    for (const auto& i : tx_money_got_in_outs)
+      total_received_2 += i.second;
+    if (total_received_1 != total_received_2)
+    {
+      const el::Level level = el::Level::Warning;
+      MCLOG_RED(level, "global", "**********************************************************************");
+      MCLOG_RED(level, "global", "Consistency failure in amounts received");
+      MCLOG_RED(level, "global", "Check transaction " << txid);
+      MCLOG_RED(level, "global", "**********************************************************************");
+      exit(1);
+      return;
     }
 
     for (const auto& i : tx_money_got_in_outs)
